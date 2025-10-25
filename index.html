@@ -141,11 +141,61 @@
 
     .tit1, .tituloseg {
       font-family: "Bebas Neue", sans-serif;
-      font-size: 8vw;
+          font-size: 50px;
       margin-bottom: 0px;
     }
+    .titulo2seg { 
+      margin-left: 40px;
+      font-size: 50px;
+      margin-top: 150px;
+       font-family: "Bebas Neue", sans-serif;
+    
+    }
 
-    .par1, .p3seg, .p1seg, .p2seg {
+    .p2seg {
+      margin-left: 40px;
+font-size: 4vw;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+
+   .mural2, .cont1, .mural3 {
+    margin-right: 5px;
+    padding: 0 10px; /* 20px nas laterais */
+  }
+   .muralseg {
+    margin-top: 30px;
+    margin-bottom: 0px;
+     padding: 0 10px; /* 20px nas laterais */
+    margin-right: 15px;
+   }
+
+
+       .tit1, .tituloseg {
+ font-size: 40px;
+       }
+
+  .titulo2seg {
+       margin-top: 25px;
+       margin-left: 0;
+       font-size: 40px;
+  }
+  .p2seg {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .p3seg {
+    margin-top: 1px;
+         font-size: 4vw;
+      font-weight: 400;
+      line-height: 1.6;
+  }
+}
+
+    .par1, .p3seg, .p1seg {
       font-size: 4vw;
       font-weight: 400;
       line-height: 1.6;
@@ -170,7 +220,6 @@
     @media (max-width: 768px) {
       .nav-list { gap: 40px; }
       .nav-link, .navbar a.active { font-size: 16px; }
-      .navbar { padding: 10px 0; }
     }
 
     @media (max-width: 480px) {
@@ -180,7 +229,7 @@
 
     @media (min-width: 768px) {
       .textanimation { font-size: 110px; top: 40%; }
-      .tit1, .tituloseg { font-size: 50px; }
+      .tit1, .tituloseg .titulo2seg { font-size: 50px; }
       .par1, .p1seg, .p2seg, .p3seg { font-size: 23px; }
       .muralseg { flex-direction: row; }
       .seg { width: 500px; margin: 60px 0; }
@@ -226,11 +275,15 @@
   </div>
 
   <div class="mural2">
+     
+<div class="cont1">
+
     <h1 class="tit1">BEM-VINDOS AO NOSSO LABJUV!</h1>
     <p class="par1">
       O nosso projeto do LABJUV tem como o tema segregação socioespacial. Falaremos sobre a infraestrutura frágil e
       indesejada do nosso país que nosso tema aborda.
     </p>
+
     <h1 class="tituloseg">Segregação Socioespacial:</h1>
     <p class="p1seg">
       A segregação socioespacial é a separação das pessoas dentro da cidade conforme sua classe social, renda, etnia ou
@@ -238,6 +291,9 @@
       de áreas ricas, bem estruturadas e com acesso a serviços, enquanto regiões pobres, como periferias e favelas,
       sofrem com a falta de infraestrutura e oportunidades.
     </p>
+
+    </div>
+
     <div class="muralseg">
       <img class="seg" src="image.png" alt="" id="scroll" />
       <div>
@@ -303,6 +359,22 @@
       else navbar.classList.remove("hide");
       lastScrollY = window.scrollY;
     });
+    const murals = document.querySelectorAll(".mural2, .muralseg, .mural3");
+
+window.addEventListener("scroll", () => {
+  let hideNavbar = false;
+
+  murals.forEach(mural => {
+    const rect = mural.getBoundingClientRect();
+    // Se qualquer mural estiver visível na tela
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      hideNavbar = true;
+    }
+  });
+
+  if (hideNavbar) navbar.classList.add("hide");
+  else navbar.classList.remove("hide");
+});
 
     // Typewriter
     const phrases = [
