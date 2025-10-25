@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+</head>
+
+
+
+<style>
+
+html, body {
+  
+  margin: 0;
+  height: 200vh;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  font-family: "Poppins", sans-serif;
+  color: white;
+    overflow-x: hidden;
+  }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      z-index: 10;
+      transition: top 0.4s ease, opacity 0.4s ease;
+    }
+
+    .navbar.hide {
+      top: -100px;
+      opacity: 0;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 350px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      transform: scale(1.2);
+      color: white;
+      border-bottom: 1px solid white;
+    }
+  
+
+    .navbar a.active {
+      text-decoration: none;
+      font-weight: 600;
+  font-size: 18px; /* aumenta o tamanho da letra */
+  color: aqua;  /* cria a linha embaixo */
+  padding-bottom: 2px; /* deixa espaço entre a letra e a linha */
+  border-bottom: 1px solid aqua;
+}
+
+</style>
+
+
+
+<body>
+    
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="noticias.html" class="nav-link">Notícias</a></li>
+          <li><a href="contatos.html" class="nav-link">Contatos</a></li>
+          <li><a href="componentes.html" class="active">Componentes</a></li>
+        </ul>
+      </nav>
+
+</body>
+
+
+
+<script>
+
+const navbar = document.getElementById("navbar");
+    let lastScrollY = window.scrollY || 0;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScrollY) {
+        navbar.classList.add("hide"); // scroll down
+      } else {
+        navbar.classList.remove("hide"); // scroll up
+      }
+      lastScrollY = window.scrollY;
+    });
+
+</script>
+
+
+
+</html>
