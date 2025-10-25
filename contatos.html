@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  <title>Notícias</title>
+
+  <style>
+    /* ------------------ BASE ------------------ */
+    html, body {
+      margin: 0;
+      height: 200vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      font-family: "Rubik", sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ------------------ NAVBAR ------------------ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      z-index: 10;
+      transition: top 0.4s ease, opacity 0.4s ease;
+    }
+
+    .navbar.hide {
+      top: -100px;
+      opacity: 0;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 350px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: transform 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    .nav-link:hover {
+      transform: scale(1.2);
+      color: white;
+      border-bottom: 1px solid white;
+    }
+
+    .navbar a.active {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      color: aqua;
+      padding-bottom: 2px;
+      border-bottom: 1px solid aqua;
+    }
+
+    /* ------------------ MEDIA QUERIES ------------------ */
+    @media (max-width: 768px) {
+    .nav-list {
+        gap: 40px; /* menor espaço entre links em tablets */
+    }
+
+    .nav-link, .navbar a.active {
+        font-size: 16px; /* fonte menor em mobile */
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list {
+        gap: 30px; /* espaço menor para celulares pequenos */
+    }
+
+    .nav-link, .navbar a.active {
+        font-size: 14px;
+    }
+
+    }
+    @media (min-width: 768px) {
+      .textanimation {
+        font-size: 50px;
+        top: 40%;
+      }
+    }
+    
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" id="navbar">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-link">Início</a></li>
+      <li><a href="noticias.html" class="nav-link">Notícias</a></li>
+      <li><a href="contatos.html" class="active">Contatos</a></li>
+      <li><a href="componentes.html" class="nav-link">Componentes</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    let lastScrollY = window.scrollY || 0;
+
+    // Reseta navbar ao voltar pra página
+    window.addEventListener("pageshow", () => {
+      navbar.classList.remove("hide");
+      lastScrollY = window.scrollY || 0;
+    });
+
+    // Esconde/mostra conforme o scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScrollY) {
+        navbar.classList.add("hide"); // scroll down
+      } else {
+        navbar.classList.remove("hide"); // scroll up
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+</body>
+</html>
