@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mural</title>
+  <title>Segregação Socioespacial - Início</title>
+ <link rel="icon" href="canvlogo.png" type="image/png ">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     html, body {
       scroll-behavior: smooth;
@@ -109,7 +111,125 @@
       font-size: 30px;
       font-weight: 300;
       color: white;
+     
       padding: 0 10px;
+    }
+    .textanimation span::after {
+      content: "";
+      border-left: 1px solid white;
+      margin-left: 10px;
+      opacity: 1;
+      animation: cursor 1s infinite;
+      }
+
+      @keyframes cursor {
+        0% {
+          opacity: 0;
+        }
+      }
+
+.silva {
+  margin-top: 100px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+
+  display: flex;
+  flex-direction: column;  /* empilha verticalmente */
+  justify-content: center; /* centraliza verticalmente se precisar */
+  align-items: center;     /* centraliza horizontalmente */
+  padding: 20px 0;         /* espaçamento em cima e embaixo */
+}
+
+  
+
+.social-container {
+  display: flex;
+  gap: 34px;
+  justify-content: center;  /* centraliza os ícones horizontalmente */
+  margin-bottom: 15px;      /* espaçamento entre ícones e texto */
+  position: relative;
+}
+
+.social-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* REMOVER margin-top: -70px; */
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  margin-top: 10px;
+}
+
+.dr {
+  opacity: 0.8;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+
+    .social-icon i {
+      font-size: 1.8rem;
+      color: #aaa;
+      transition: 0.4s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px var(--glow);
+    }
+
+    .social-icon:hover i {
+      color: var(--glow);
+      text-shadow: 0 0 20px var(--glow);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .social-icon:nth-child(odd) {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .social-icon:nth-child(even) {
+      animation: float 4s ease-in-out 1s infinite;
+    }
+
+    .facebook {
+      --glow: #1877f2;
+    }
+
+    .twitter {
+      --glow: #1da1f2;
+    }
+
+    .instagram {
+      --glow: #e1306c;
+    }
+
+    .linkedin {
+      --glow: #0a66c2;
+    }
+
+    .youtube {
+      --glow: #ff0000;
     }
 
     .seta {
@@ -201,6 +321,13 @@ font-size: 4vw;
       line-height: 1.6;
       margin-bottom: 0;
     }
+
+      .p3seg {
+    margin-top: 1px;
+         font-size: 4vw;
+      font-weight: 400;
+      line-height: 1.6;
+  }
 
     .muralseg {
       display: flex;
@@ -300,19 +427,32 @@ font-size: 4vw;
         <h1 class="titulo2seg">Surgimento:</h1>
         <p class="p2seg">
           A segregação socioespacial está diretamente ligada à desigualdade na infraestrutura urbana. Ela surgiu quando
-          o crescimento das cidades ocorreu de forma desorganizado e sem planejamento adequado, resultando
+          o crescimento das cidades ocorreu de forma desorganizado e sem planejamento adequado, resultando na 
         </p>
       </div>
     </div>
     <div class="mural3">
       <p class="p3seg">
-        na concentração de serviços e investimentos em determinadas áreas, geralmente ocupadas por grupos de maior
+        concentração de serviços e investimentos  em determinadas áreas, geralmente ocupadas por grupos de maior
         renda. Enquanto isso, as populações de baixa renda foram empurradas para regiões periféricas, com pouca oferta
         de transporte público, saneamento básico, iluminação, escolas e postos de saúde. Essa desigualdade na
         infraestrutura reforça a exclusão social e limita o acesso dessas comunidades às oportunidades urbanas,
-        perpetuando o ciclo de pobreza e desigualdade.
+        perpetuando o ciclo de pobreza e desigualdade social.
       </p>
     </div>
+  </div>
+
+   <div class="silva">
+  <div class="social-container">
+    <div class="social-icon facebook"><i class="fab fa-facebook-f"></i></div>
+    <div class="social-icon twitter"><i class="fab fa-twitter"></i></div>
+    <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+    <div class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+    <div class="social-icon youtube"><i class="fab fa-youtube"></i></div>
+  </div>
+  <p class="dr">© Desenvolvido por: Lucas Silva / 2025</p>
+</div>
+   
   </div>
 
   <script>
@@ -388,18 +528,18 @@ window.addEventListener("scroll", () => {
       if (currentChar < phrases[currentPhrase].length) {
         span.textContent += phrases[currentPhrase].charAt(currentChar);
         currentChar++;
-        setTimeout(type, 70);
-      } else setTimeout(erase, 2000);
+        setTimeout(type, 150);
+      } else setTimeout(erase, 3000);
     }
 
     function erase() {
       if (currentChar > 0) {
         span.textContent = phrases[currentPhrase].substring(0, currentChar - 1);
         currentChar--;
-        setTimeout(erase, 50);
+        setTimeout(erase, 100);
       } else {
         currentPhrase = (currentPhrase + 1) % phrases.length;
-        setTimeout(type, 500);
+        setTimeout(type, 400);
       }
     }
 

@@ -6,19 +6,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-  <title>Notícias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Segregação Socioespacial - Notícias</title>
+ <link rel="icon" href="canvlogo.png" type="image/png ">
 
   <style>
     /* ------------------ BASE ------------------ */
-    html, body {
-      margin: 0;
-      height: 200vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      font-family: "Rubik", sans-serif;
-      color: white;
-      overflow-x: hidden;
-    }
-
+ html, body {
+  margin: 0;
+  min-height: 100vh;   /* garante altura mínima */
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: "Rubik", sans-serif;
+  color: white;
+  overflow-x: hidden;
+  position: relative;   /* importante para posicionar a silva absoluta */
+}
     /* ------------------ NAVBAR ------------------ */
     .navbar {
       position: fixed;
@@ -102,6 +104,117 @@
       }
     }
 
+    .mural1 {
+      font-weight: 300;
+      margin-top: 300px;
+      margin-left: 30px;
+    }
+    .video1 { margin-left: 90px; border-radius: 20px; } .video1p { font-size: 18px } .video1h { font-size: 25 px; }
+
+.silva {
+  margin-top: 100px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+
+  display: flex;
+  flex-direction: column;  /* empilha verticalmente */
+  justify-content: center; /* centraliza verticalmente se precisar */
+  align-items: center;     /* centraliza horizontalmente */
+  padding: 20px 0;         /* espaçamento em cima e embaixo */
+}
+
+  
+
+.social-container {
+  display: flex;
+  gap: 34px;
+  justify-content: center;  /* centraliza os ícones horizontalmente */
+  margin-bottom: 15px;      /* espaçamento entre ícones e texto */
+  position: relative;
+}
+
+.social-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* REMOVER margin-top: -70px; */
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  margin-top: 10px;
+}
+
+.dr {
+  opacity: 0.8;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+
+    .social-icon i {
+      font-size: 1.8rem;
+      color: #aaa;
+      transition: 0.4s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px var(--glow);
+    }
+
+    .social-icon:hover i {
+      color: var(--glow);
+      text-shadow: 0 0 20px var(--glow);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .social-icon:nth-child(odd) {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .social-icon:nth-child(even) {
+      animation: float 4s ease-in-out 1s infinite;
+    }
+
+    .facebook {
+      --glow: #1877f2;
+    }
+
+    .twitter {
+      --glow: #1da1f2;
+    }
+
+    .instagram {
+      --glow: #e1306c;
+    }
+
+    .linkedin {
+      --glow: #0a66c2;
+    }
+
+    .youtube {
+      --glow: #ff0000;
+    }
+
   </style>
 </head>
 
@@ -114,6 +227,38 @@
       <li><a href="componentes.html" class="nav-link">Componentes</a></li>
     </ul>
   </nav>
+
+  <div class="mural1">
+
+
+
+    <h1 class="video1h" >Tempestade atinge Salvador e provoca deslizamentos</h1>
+  <iframe class="video1" width="560" height="315" 
+src="https://www.youtube.com/embed/pGXcF8xnj24?si=PSDzAKvkoRKG0_Uv" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+dontallowfullscreen>
+</iframe>
+<p class="video1p" >terça-feira (26/11/2019) choveu na capital baiana o que estava previsto para o mês inteiro.<br>
+   Universidades e órgãos públicos encerraram as atividades mais cedo. Segundo a Defesa Civil,<br>
+   foram mais de 300 ocorrências durante todo o dia, principalmente de deslizamentos e alagamentos de imóveis.</p>
+
+</div>
+
+   <div class="silva">
+  <div class="social-container">
+    <div class="social-icon facebook"><i class="fab fa-facebook-f"></i></div>
+    <div class="social-icon twitter"><i class="fab fa-twitter"></i></div>
+    <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+    <div class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+    <div class="social-icon youtube"><i class="fab fa-youtube"></i></div>
+  </div>
+  <p class="dr">© Desenvolvido por: Lucas Silva / 2025</p>
+</div>
+   
+  </div>
+  
 
   <script>
     const navbar = document.getElementById("navbar");
