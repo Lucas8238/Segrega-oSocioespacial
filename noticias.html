@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <title>Segregação Socioespacial - Notícias</title>
+  <title>Segregação Socioespacial - Reportagens</title>
   <link rel="icon" href="canvlogo.png" type="image/png">
 
   <style>
@@ -76,17 +77,32 @@
     /* ------------------ ÁREA DE VÍDEO ------------------ */
     .mural1 {
       font-weight: 300;
-      margin-top: 300px;
+      margin-top: 100px;
       padding: 0 20px;
     }
 
+    .rept {
+      text-align: center;
+      margin-bottom: 150px;
+         font-family: "Bebas Neue", sans-serif;
+           font-weight: 200;
+              font-size: 60px;
+               border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* linha discreta */
+      padding-bottom: 4px; /* espaço entre a linha e o vídeo */
+       margin-bottom: 140px; /* espaço entre uma notícia e outra */
+    }
+
     .video1h {
-      font-size: 26px;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: .2px;
       margin-bottom: 20px;
       text-align: left;
-      margin-left: 200px;
+      margin-left: 90px;
       margin-bottom: 30px;
+       font-family: "Rubik", sans-serif;
     }
+
 
     .video-section {
       display: flex;
@@ -95,7 +111,10 @@
       gap: 20px;
       margin-left: 90px;
       margin-right: 20px;
-      margin-bottom: 100px
+      margin-bottom: 100px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* linha discreta */
+      padding-bottom: 40px; /* espaço entre a linha e o vídeo */
+       margin-bottom: 40px; /* espaço entre uma notícia e outra */
     }
 
     .video-container {
@@ -235,6 +254,21 @@
       .video1h { font-size: 20px; }
       .video1p { font-size: 15px; }
     }
+
+    @media (max-width: 768px) {
+  .rept {
+    font-size: 32px; /* diminui para tablets e celulares */
+    line-height: 1.2;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rept {
+    font-size: 26px; /* ainda menor para celular pequeno */
+    line-height: 1.2;
+  }
+}
   </style>
 </head>
 
@@ -242,13 +276,16 @@
   <nav class="navbar" id="navbar">
     <ul class="nav-list">
       <li><a href="index.html" class="nav-link">Início</a></li>
-      <li><a href="noticias.html" class="active">Notícias</a></li>
+      <li><a href="noticias.html" class="active">Reportagens</a></li>
       <li><a href="contatos.html" class="nav-link">Contatos de Referência</a></li>
-      <li><a href="componentes.html" class="nav-link">Componentes</a></li>
+      <li><a href="componentes.html" class="nav-link">Créditos</a></li>
     </ul>
   </nav>
 
   <div class="mural1">
+    <h1 class="rept">Reportagens presentes do cotidiano que abordam a Segregação Socioespacial.</h1>
+
+
     <h1 class="video1h">Tempestade atinge Salvador e provoca deslizamentos</h1>
 
     <div class="video-section">
@@ -365,7 +402,7 @@ Depois de três dias de chuva forte, a preocupação em Salvador é com os desli
     <div class="social-container">
       <div class="social-icon facebook"><a href="https://wa.link/qc0pcj" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div>
       <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
-      <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div>
+      <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-silva-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div>
     </div>
     <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
   </div>
