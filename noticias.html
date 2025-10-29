@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Segregação Socioespacial - Notícias</title>
- <link rel="icon" href="canvlogo.png" type="image/png ">
+  <link rel="icon" href="canvlogo.png" type="image/png">
 
   <style>
     /* ------------------ BASE ------------------ */
- html, body {
-  margin: 0;
-  min-height: 100vh;   /* garante altura mínima */
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  font-family: "Rubik", sans-serif;
-  color: white;
-  overflow-x: hidden;
-  position: relative;   /* importante para posicionar a silva absoluta */
-}
+    html, body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      font-family: "Rubik", sans-serif;
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+
     /* ------------------ NAVBAR ------------------ */
     .navbar {
       position: fixed;
@@ -52,7 +53,7 @@
       display: inline-block;
       color: white;
       text-decoration: none;
-      font-size: 18px;   
+      font-size: 18px;
       font-weight: 600;
       transition: transform 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
     }
@@ -72,101 +73,110 @@
       border-bottom: 1px solid aqua;
     }
 
-    /* ------------------ MEDIA QUERIES ------------------ */
-    @media (max-width: 768px) {
-    .nav-list {
-        gap: 40px; /* menor espaço entre links em tablets */
-    }
-
-    .nav-link, .navbar a.active {
-        font-size: 16px; /* fonte menor em mobile */
-    }
-
-    .navbar {
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-list {
-        gap: 30px; /* espaço menor para celulares pequenos */
-    }
-
-    .nav-link, .navbar a.active {
-        font-size: 14px;
-    }
-
-    }
-    @media (min-width: 768px) {
-      .textanimation {
-        font-size: 50px;
-        top: 40%;
-      }
-    }
-
+    /* ------------------ ÁREA DE VÍDEO ------------------ */
     .mural1 {
       font-weight: 300;
       margin-top: 300px;
-      margin-left: 30px;
+      padding: 0 20px;
     }
-    .video1 { margin-left: 90px; border-radius: 20px; } .video1p { font-size: 18px } .video1h { font-size: 25 px; }
 
-.silva {
-  margin-top: 100px;
-  height: 60px;
-  width: 100%;
-  background-color: black;
-  opacity: 0.8;
+    .video1h {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: left;
+      margin-left: 200px;
+    }
 
-  display: flex;
-  flex-direction: column;  /* empilha verticalmente */
-  justify-content: center; /* centraliza verticalmente se precisar */
-  align-items: center;     /* centraliza horizontalmente */
-  padding: 20px 0;         /* espaçamento em cima e embaixo */
-}
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+      margin-left: 90px;
+      margin-right: 20px;
+      margin-bottom: 100px
+    }
 
-  
+    .video-container {
+      position: relative;
+      flex: 1 1 360px;
+      max-width: 360px;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #000;
+      aspect-ratio: 16 / 9; /* Mantém proporção e resolve bug no mobile */
+    }
 
-.social-container {
-  display: flex;
-  gap: 34px;
-  justify-content: center;  /* centraliza os ícones horizontalmente */
-  margin-bottom: 15px;      /* espaçamento entre ícones e texto */
-  position: relative;
-}
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+      display: block;
+    }
 
-.social-icon {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* REMOVER margin-top: -70px; */
-  cursor: pointer;
-  transition: 0.4s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  margin-top: 30px;
-}
+    .video1p {
+      flex: 1 1 300px;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+      color: #f0f0f0;
+      margin-top: 0;
+    }
 
-.dr {
-  opacity: 0.8;
-  text-align: center;
-  margin-top: 0;
-  font-size: 14px;
-  color: #aaa;
-}
+    /* ------------------ FOOTER ------------------ */
+    .silva {
+      margin-top: 100px;
+      height: 60px;
+      width: 100%;
+      background-color: black;
+      opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
 
+    .social-container {
+      display: flex;
+      gap: 34px;
+      justify-content: center;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .social-icon {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      margin-top: 30px;
+    }
+
+    .dr {
+      opacity: 0.8;
+      text-align: center;
+      margin-top: 0;
+      font-size: 14px;
+      color: #aaa;
+    }
 
     .social-icon i {
       font-size: 1.8rem;
       color: #aaa;
       transition: 0.4s ease;
     }
+
     .social-icon:hover {
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 0 25px var(--glow);
@@ -178,38 +188,52 @@
     }
 
     @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
-    .social-icon:nth-child(odd) {
-      animation: float 4s ease-in-out infinite;
-    }
+    .social-icon:nth-child(odd) { animation: float 4s ease-in-out infinite; }
+    .social-icon:nth-child(even) { animation: float 4s ease-in-out 1s infinite; }
 
-    .social-icon:nth-child(even) {
-      animation: float 4s ease-in-out 1s infinite;
-    }
-
-   .facebook {
-     --glow: #0a66c2;
-    }
-
-    .instagram {
+    .facebook, .instagram, .linkedin {
       --glow: #0a66c2;
     }
 
-    .linkedin {
-      --glow: #0a66c2;
+    /* ------------------ MEDIA QUERIES ------------------ */
+    @media (max-width: 768px) {
+      .nav-list { gap: 40px; }
+      .nav-link, .navbar a.active { font-size: 16px; }
+      .navbar { padding: 10px 0; }
+
+      .video1h {
+        font-size: 22px;
+        margin-left: 20px;
+        text-align: left;
+      }
+
+      .video-section {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .video-container {
+        max-width: 100%;
+        aspect-ratio: 16 / 9; /* mantém proporção no mobile */
+      }
+
+      .video1p {
+        font-size: 16px;
+        margin-top: 15px;
+      }
     }
 
-
+    @media (max-width: 480px) {
+      .nav-list { gap: 30px; }
+      .nav-link, .navbar a.active { font-size: 14px; }
+      .video1h { font-size: 20px; }
+      .video1p { font-size: 15px; }
+    }
   </style>
 </head>
 
@@ -224,51 +248,141 @@
   </nav>
 
   <div class="mural1">
+    <h1 class="video1h">Tempestade atinge Salvador e provoca deslizamentos</h1>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/pGXcF8xnj24?si=PSDzAKvkoRKG0_Uv"
+          title="YouTube video player"
+       dontallowfrullscreen>
+        </iframe>
+      </div>
+
+      <p class="video1p">
+        terça-feira (26/11/2019) choveu na capital baiana o que estava previsto para o mês inteiro.<br>
+        Universidades e órgãos públicos encerraram as atividades mais cedo. Segundo a Defesa Civil,<br>
+        foram mais de 300 ocorrências durante todo o dia, principalmente de deslizamentos e alagamentos de imóveis.
+      </p>
+    </div>
+
+    <h1 class="video1h">Temporal provoca deslizamentos e destruição em Salvador (BA)</h1>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/3SQ0aTNWLQo?si=CyWLqhl0odjimVNk"
+          title="YouTube video player"
+      dontallowfrullscreen>
+        </iframe>
+      </div>
+
+      <p class="video1p">
+      Nesse sábado(24/10/2025), em Salvador (BA), fortes chuvas e ventos intensos durante a madrugada provocaram alagamentos e danos em vários bairros. Ondas atingiram o Porto da Barra, enquanto ruas no bairro do Uruguai ficaram submersas, com água invadindo casas e causando prejuízos. Na região metropolitana, deslizamentos em Simões Filho afetaram moradias e deixaram famílias em alerta.
+      </p>
+    </div>
+
+<h1 class="video1h">Frente fria perde força em salvador, mas risco de deslizamento continua alto. </h1>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/rk5s6PM7MrI?si=bDoNL78yvaiwhjCH"
+          title="YouTube video player"
+      dontallowfrullscreen>
+        </iframe>
+      </div>
+
+      <p class="video1p">
+       Em Salvador (BA), a frente fria começa a perder força, mas o alerta máximo por causa das chuvas permanece. O solo encharcado aumenta o risco de deslizamentos. Segundo a Defesa Civil, só nesta quinta-feira (23) foram registradas mais de 120 ocorrências. Cerca de 244 milímetros choveram nos últimos três dias; isso é mais que o dobro da média para todo o mês de outubro. As rajadas de vento chegaram a 75 km/h. Casas foram destelhadas e pelo menos 40 árvores caíram. A frente fria começa a se afastar nesta quinta-feira, mas ainda existe a preocupação com o solo, que está encharcado e pode causar novos deslizamentos de terra.
+      </p>
+    </div>
+
+<h1 class="video1h">Salvador (BA) registra mais de cem deslizamentos de terra nos três dias </h1>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/kiymtzX8C40?si=h68q-V3G_ts0jqTP"
+          title="YouTube video player"
+          dontallowfrullscreen>
+        </iframe>
+      </div>
+
+      <p class="video1p">
+       Novos temporais voltaram a atingir cidades da Bahia nesta quarta (24). Em Salvador, mais de cem deslizamentos de terra foram registrados em três dias. Na periferia da capital baiana, casas ficaram completamente alagadas. Neste mês, já choveu 752 milímetros em Salvador; mais do que o dobro da média histórica para o período. É o abril mais chuvoso dos últimos 28 anos. 
+      </p>
+    </div>
+
+<h1 class="video1h">Salvador entra em estado de alerta máximo de chuva</h1>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/NOpYmgcLzyI?si=rcHqcAysNGWx14t7"
+          title="YouTube video player"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="video1p">
+       Chuva intensa e ventos fortes causam alagamentos e transtornos em Salvador. A cidade foi atingida por um temporal que provocou a queda de árvores, deslizamentos de terra e interrupção no tráfego. As sirenes de alerta foram acionadas em várias comunidades, e a previsão é de mais chuva nos próximos dias.
+      </p>
+    </div>
+
+    <h1 class="video1h">Deslizamentos da terra acionam alerta em Salvador após três dias de chuva forte</h1>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/GzXl7uSYJ4o?si=eJZQjtV71Mld1h0g"
+          title="YouTube video player"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="video1p">
+Depois de três dias de chuva forte, a preocupação em Salvador é com os deslizamentos de terra. Sirenes de alerta foram acionadas em 13 comunidades. Os estragos depois de 72 horas de chuvas podem ser vistos em toda a capital baiana. Um dos parques da cidade praticamente desapareceu debaixo d'água. Um restaurante, que fica em um ponto turístico, foi invadido pelas ondas. O serviço foi suspenso. 
+      </p>
+    </div>
 
 
 
-    <h1 class="video1h" >Tempestade atinge Salvador e provoca deslizamentos</h1>
-  <iframe class="video1" width="560" height="315" 
-src="https://www.youtube.com/embed/pGXcF8xnj24?si=PSDzAKvkoRKG0_Uv" 
-title="YouTube video player" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-dontallowfullscreen>
-</iframe>
-<p class="video1p" >terça-feira (26/11/2019) choveu na capital baiana o que estava previsto para o mês inteiro.<br>
-   Universidades e órgãos públicos encerraram as atividades mais cedo. Segundo a Defesa Civil,<br>
-   foram mais de 300 ocorrências durante todo o dia, principalmente de deslizamentos e alagamentos de imóveis.</p>
 
-</div>
 
-   <div class="silva">
-<div class="social-container">
-    <div class="social-icon facebook"><a href="https://wa.link/qc0pcj" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div>
-    <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
-    <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div>
+
+
+
+
+
+
+
+
   </div>
-  <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
-</div>
-   
+
+  <div class="silva">
+    <div class="social-container">
+      <div class="social-icon facebook"><a href="https://wa.link/qc0pcj" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div>
+      <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+      <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+    <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
   </div>
-  
 
   <script>
     const navbar = document.getElementById("navbar");
     let lastScrollY = window.scrollY || 0;
 
-    // Reseta navbar ao voltar pra página
     window.addEventListener("pageshow", () => {
       navbar.classList.remove("hide");
       lastScrollY = window.scrollY || 0;
     });
 
-    // Esconde/mostra conforme o scroll
     window.addEventListener("scroll", () => {
       if (window.scrollY > lastScrollY) {
-        navbar.classList.add("hide"); // scroll down
+        navbar.classList.add("hide");
       } else {
-        navbar.classList.remove("hide"); // scroll up
+        navbar.classList.remove("hide");
       }
       lastScrollY = window.scrollY;
     });
