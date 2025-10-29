@@ -6,23 +6,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Segregação Socioespacial - Notícias</title>
- <link rel="icon" href="canvlogo.png" type="image/png ">
+  <link rel="icon" href="canvlogo.png" type="image/png ">
 
   <style>
     /* ------------------ BASE ------------------ */
- html, body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* altura mínima da tela */
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  font-family: "Rubik", sans-serif;
-  color: white;
-  overflow-x: hidden;
-  position: relative;   /* importante para posicionar a silva absoluta */
-}
+    html, body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      font-family: "Rubik", sans-serif;
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+
     /* ------------------ NAVBAR ------------------ */
     .navbar {
       position: fixed;
@@ -76,29 +77,26 @@
 
     /* ------------------ MEDIA QUERIES ------------------ */
     @media (max-width: 768px) {
-    .nav-list {
-        gap: 40px; /* menor espaço entre links em tablets */
+      .nav-list {
+          gap: 40px;
+      }
+      .nav-link, .navbar a.active {
+          font-size: 16px;
+      }
+      .navbar {
+          padding: 10px 0;
+      }
     }
 
-    .nav-link, .navbar a.active {
-        font-size: 16px; /* fonte menor em mobile */
+    @media (max-width: 480px) {
+      .nav-list {
+          gap: 30px;
+      }
+      .nav-link, .navbar a.active {
+          font-size: 14px;
+      }
     }
 
-    .navbar {
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-list {
-        gap: 30px; /* espaço menor para celulares pequenos */
-    }
-
-    .nav-link, .navbar a.active {
-        font-size: 14px;
-    }
-
-    }
     @media (min-width: 768px) {
       .textanimation {
         font-size: 50px;
@@ -106,59 +104,97 @@
       }
     }
 
-.silva {
-  margin-top: auto;
+    /* ------------------ CRÉDITOS ANIMAÇÃO ------------------ */
+.credits-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.credits {
+  position: absolute;
   width: 100%;
-    height: 60px;
-  background-color: black;
-  opacity: 0.4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-}
-  
-.social-container {
-  display: flex;
-  gap: 34px;
-  justify-content: center;  /* centraliza os ícones horizontalmente */
-  margin-bottom: 15px;      /* espaçamento entre ícones e texto */
-  position: relative;
-}
-
-.social-icon {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* REMOVER margin-top: -70px; */
-  cursor: pointer;
-  transition: 0.4s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  margin-top: 30px;
-}
-
-.dr {
-  opacity: 0.8;
   text-align: center;
-  margin-top: 0;
-  font-size: 14px;
-  color: #aaa;
+  /* começa abaixo da tela */
+  transform: translateY(100%);
+  animation: roll 12s linear infinite;
 }
 
+    .credits h1 {
+      margin: 0 0 15px 0;
+      font-size: 30px;
+      color: aqua;
+    }
+
+    .credits p {
+      margin: 0 0 25px 0;
+      font-size: 20px;
+      color: white;
+    }
+
+@keyframes roll {
+  0% {
+    transform: translateY(210%); /* fora da tela embaixo */
+  }
+  100% {
+    transform: translateY(-100%); /* sobe e sai do topo */
+  }
+}
+
+    /* ------------------ RODAPÉ ------------------ */
+    .silva {
+      margin-top: auto;
+      width: 100%;
+      height: 60px;
+      background-color: black;
+      opacity: 0.4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      z-index: 10;
+    }
+
+    .social-container {
+      display: flex;
+      gap: 34px;
+      justify-content: center;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .social-icon {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      margin-top: 30px;
+    }
+
+    .dr {
+      opacity: 0.8;
+      text-align: center;
+      margin-top: 0;
+      font-size: 14px;
+      color: #aaa;
+    }
 
     .social-icon i {
       font-size: 1.8rem;
       color: #aaa;
       transition: 0.4s ease;
     }
+
     .social-icon:hover {
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 0 25px var(--glow);
@@ -170,15 +206,8 @@
     }
 
     @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .social-icon:nth-child(odd) {
@@ -189,19 +218,9 @@
       animation: float 4s ease-in-out 1s infinite;
     }
 
-    .facebook {
-     --glow: #0a66c2;
-    }
-
-    .instagram {
-      --glow: #0a66c2;
-    }
-
-    .linkedin {
-      --glow: #0a66c2;
-    }
-
-
+    .facebook { --glow: #0a66c2; }
+    .instagram { --glow: #e1306c; }
+    .linkedin { --glow: #0a66c2; }
   </style>
 </head>
 
@@ -210,36 +229,63 @@
     <ul class="nav-list">
       <li><a href="index.html" class="nav-link">Início</a></li>
       <li><a href="noticias.html" class="nav-link">Notícias</a></li>
-      <li><a href="contatos.html" class="nav-link">Contatos</a></li>
+      <li><a href="contatos.html" class="nav-link">Contatos de Referência</a></li>
       <li><a href="componentes.html" class="active">Componentes</a></li>
     </ul>
   </nav>
 
-        <div class="silva">
-<div class="social-container">
-    <div class="social-icon facebook"><a href="https://wa.link/qc0pcj" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div>
-    <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
-    <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div>
+  <!-- ------------------ CRÉDITOS ------------------ -->
+  <div class="credits-container">
+  <div class="credits">
+    <h1>APRESENTAÇÃO</h1>
+    <p>LUCAS </p>
+    <h1>CURTA PRODUÇÂO</h1>
+    <p>LUCAS</p>
+    <h1>CURTA ATORES</h1>
+    <p>LUCAS</p>
+    <h1>PESQUISAS GERAIS</h1>
+    <p>LUCAS</p>
+    <h1>DESENVOLVIMENTO DO SITE</h1>
+    <p>LUCAS</p>
+    <h1>FONTES UTILIZADAS</h1>
+     <p>JORNAL RECORD<br>
+      TVE BAHIA
+    </p>
+    <h1>Agradecimentos</h1>
+    <p>Todos que ajudaram!</p>
   </div>
-  <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
 </div>
+
+  <!-- ------------------ RODAPÉ ------------------ -->
+  <div class="silva">
+    <div class="social-container">
+      <div class="social-icon facebook">
+        <a href="https://wa.link/qc0pcj" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <div class="social-icon instagram">
+        <a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="social-icon linkedin">
+        <a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
+  </div>
 
   <script>
     const navbar = document.getElementById("navbar");
     let lastScrollY = window.scrollY || 0;
 
-    // Reseta navbar ao voltar pra página
     window.addEventListener("pageshow", () => {
       navbar.classList.remove("hide");
       lastScrollY = window.scrollY || 0;
     });
 
-    // Esconde/mostra conforme o scroll
     window.addEventListener("scroll", () => {
       if (window.scrollY > lastScrollY) {
-        navbar.classList.add("hide"); // scroll down
+        navbar.classList.add("hide");
       } else {
-        navbar.classList.remove("hide"); // scroll up
+        navbar.classList.remove("hide");
       }
       lastScrollY = window.scrollY;
     });
