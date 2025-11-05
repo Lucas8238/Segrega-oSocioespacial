@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Segregação Socioespacial - Contatos</title>
- <link rel="icon" href="canvlogo.png" type="image/png ">
+  <link rel="icon" href="canvlogo.png" type="image/png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    /* ------------------ BASE ------------------ */
- html, body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* altura mínima da tela */
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  font-family: "Rubik", sans-serif;
-  color: white;
-  overflow-x: hidden;
-  position: relative;   /* importante para posicionar a silva absoluta */
-}
+    /* ---------------- BASE ---------------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      width: 100%;
+      font-family: "Rubik", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      overflow-x: hidden;
+    }
 
-    /* ------------------ NAVBAR ------------------ */
-     .navbar {
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
       position: fixed;
       top: 0;
       left: 0;
@@ -36,7 +35,7 @@
       justify-content: center;
       padding: 20px 0;
       z-index: 10;
-      transition: top 0.4s ease, opacity 0.4s ease;
+      transition: top 0.4s ease, opacity 0.4s ease, padding 0.3s ease;
     }
 
     .navbar.hide {
@@ -53,115 +52,126 @@
     }
 
     .nav-link {
-      display: inline-block;
       color: white;
       text-decoration: none;
-      font-size: 18px;   
       font-weight: 600;
-      transition: transform 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
+      font-size: 18px;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .nav-link:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
       color: white;
       border-bottom: 1px solid white;
     }
 
     .navbar a.active {
       text-decoration: none;
-      font-weight: 600;
       font-size: 18px;
+      font-weight: 600;
       color: aqua;
-      padding-bottom: 2px;
       border-bottom: 1px solid aqua;
+      padding-bottom: 2px;
     }
 
-    /* ------------------ MEDIA QUERIES ------------------ */
-    @media (max-width: 768px) {
-    .nav-list {
-        gap: 25px; /* menor espaço entre links em tablets */
+    /* ---------------- CONTEÚDO ---------------- */
+    .mural1 {
+      max-width: 1200px;
+      margin: 130px auto 80px auto;
+      padding: 0 20px;
     }
 
-    .nav-link, .navbar a.active {
-        font-size: 16px; /* fonte menor em mobile */
+    .titulo {
+      text-align: center;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 200;
+      font-size: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 6px;
+      margin-bottom: 100px;
     }
 
-    .navbar {
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-list {
-        gap: 15px; /* espaço menor para celulares pequenos */
+    .contact-card {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 40px;
+      margin-bottom: 60px;
     }
 
-    .nav-link, .navbar a.active {
-        font-size: 14px;
+    .contact-card a {
+      display: inline-block;
+      color: aqua;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    }
-    @media (min-width: 768px) {
-      .textanimation {
-        font-size: 50px;
-        top: 40%;
-      }
+    .contact-card a:hover {
+      color: white;
+      text-decoration: underline;
     }
 
-.silva {
-  margin-top: auto;
-  width: 100%;
-    height: 60px;
-  background-color: black;
-  opacity: 0.4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-}
+    .contact-card p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #f0f0f0;
+      margin: 0;
+    }
 
-  
+    /* ---------------- FOOTER ---------------- */
+   .silva {
+      margin-top: auto;
+      width: 100%;
+      height: 60px;
+      background-color: black;
+      opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      z-index: 10;
+    }
 
-.social-container {
-  display: flex;
-  gap: 34px;
-  justify-content: center;  /* centraliza os ícones horizontalmente */
-  margin-bottom: 15px;      /* espaçamento entre ícones e texto */
-  position: relative;
-}
+    .social-container {
+      display: flex;
+      gap: 34px;
+      justify-content: center;
+      margin-bottom: 15px;
+      position: relative;
+    }
 
-.social-icon {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* REMOVER margin-top: -70px; */
-  cursor: pointer;
-  transition: 0.4s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  margin-top: 30px;
-}
+    .social-icon {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      margin-top: 30px;
+    }
 
-.dr {
-  opacity: 0.8;
-  text-align: center;
-  margin-top: 0;
-  font-size: 14px;
-  color: #aaa;
-}
+    .dr {
+      opacity: 0.8;
+      text-align: center;
+      margin-top: 0;
+      font-size: 14px;
+      color: #aaa;
+    }
 
     .social-icon i {
       font-size: 1.8rem;
       color: #aaa;
       transition: 0.4s ease;
     }
+
     .social-icon:hover {
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 0 25px var(--glow);
@@ -173,63 +183,37 @@
     }
 
     @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
-    .social-icon:nth-child(odd) {
-      animation: float 4s ease-in-out infinite;
+
+
+    .facebook { --glow: green; }
+    .instagram { --glow: #e1306c; }
+    .linkedin { --glow: #0a66c2; }
+
+    /* ---------------- RESPONSIVIDADE ---------------- */
+    @media (max-width: 1024px) {
+      .nav-list { gap: 120px; }
     }
 
-    .social-icon:nth-child(even) {
-      animation: float 4s ease-in-out 1s infinite;
+    @media (max-width: 768px) {
+      .navbar { padding: 10px 0; }
+      .nav-list { gap: 25px; }
+      .nav-link, .navbar a.active { font-size: 16px; }
+
+      .titulo { font-size: 36px; }
+      .contact-card p { font-size: 16px; text-align: justify; }
     }
 
-   .facebook {
-     --glow: #0a66c2;
+    @media (max-width: 480px) {
+      .nav-list { gap: 15px; }
+      .nav-link, .navbar a.active { font-size: 14px; }
+      .titulo { font-size: 28px; }
+      .contact-card p { font-size: 15px; }
+      .social-container { gap: 20px; }
     }
-
-    .instagram {
-      --glow: #0a66c2;
-    }
-
-    .linkedin {
-      --glow: #0a66c2;
-    }
-
-    .titulo {
-         text-align: center;
-      margin-top: 20px;
-         font-family: "Bebas Neue", sans-serif;
-           font-weight: 200;
-              font-size: 60px;
-               border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* linha discreta */
-      padding-bottom: 4px; /* espaço entre a linha e o vídeo */
-       margin-bottom: 140px; /* espaço entre uma notícia e outra */
-    }
-
-    .card1, .card2, .card3, .card4, .card5, .card6 {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* linha discreta */
-      padding-bottom: 40px; /* espaço entre a linha e o vídeo */
-       margin-bottom: 40px; /* espaço entre uma notícia e outra */
-    }
-
-    .cards1 {
-margin: 100px
-    }
-    .bottom {
-      text-decoration: none;
-      text-decoration-line: none;
-      color: aqua;
-    }
-    
   </style>
 </head>
 
@@ -243,106 +227,72 @@ margin: 100px
     </ul>
   </nav>
 
-<div class="cards1">
+  <div class="mural1">
+    <h1 class="titulo">Contatos úteis para informações ou pedido de ajuda</h1>
 
+    <div class="contact-card">
+      <a href="https://codesal.salvador.ba.gov.br/" target="_blank">Defesa Civil de Salvador</a>
+      <p>Endereço: Av. Mário Leal Ferreira, s/n, Bonocô, Salvador – BA, 40285-280<br>
+      Telefone: (71) 3202-4500</p>
+    </div>
 
-<h1 class="titulo">
-  CONTATOS ÚTEIS PARA INFORMAÇÕES  OU PEDIDO DE AJUDA 
-</h1>
+    <div class="contact-card">
+      <a href="https://observatoriodasmetropoles.net.br" target="_blank">Observatório das Metrópoles</a>
+      <p>Endereço: Vinculado à UFBA – Núcleo Salvador, com base nos departamentos de Arquitetura e Urbanismo da UFBA.<br>
+      Telefone: (71) 3283-9055</p>
+    </div>
 
-<div class="cards">
+    <div class="contact-card">
+      <a href="https://www.salvador.ba.gov.br" target="_blank">Secretaria Municipal de Promoção Social (SEMPRE)</a>
+      <p>Endereço: Rua Miguel Calmon, 28, Comércio, Salvador – BA, 40015-010<br>
+      Telefone: (71) 3202-2300</p>
+    </div>
 
-  
-<li><a href="https://codesal.salvador.ba.gov.br/" class="bottom">Clique para ser redirecionado</a></li>
-<p class="card1">
-A Defesa Civil de Salvador <br>
-Endereço: Avenida Mário Leal Ferreira, s/n, Bonocô 40285-280<br>
-Telefone: (71) 3202-4500
-</p>
+    <div class="contact-card">
+      <p><strong>IONBA – Instituto de Oportunidades da Bahia</strong><br>
+      Endereço: Rua Prof. Sabino Silva, s/n – Jardim Apipema, Salvador – BA, 40155-250<br>
+      Telefones: (71) 3235-4236 / 3336-2699<br>
+      E-mail: ionba@ionba.org.br</p>
+    </div>
 
+    <div class="contact-card">
+      <p><strong>CAMA – Associação Comunitária e de Moradores de Amaralina</strong><br>
+      Endereço: Rua do Uruguai, 26 – Sala 101A, Uruguai, Salvador – BA, 40454-260<br>
+      Telefone: (71) 3207-1926<br>
+      E-mail: ong.cama@gmail.com</p>
+    </div>
 
-<li><a href="https://observatoriodasmetropoles.net.br" class="bottom">Clique para ser redirecionado</a></li>
-
-<p class="card2">
-Observatório das Metrópoles <br>
-Endereço: vinculado à UFBA – Núcleo Salvador, com base nos departamentos de arquitetura/urbanismo da UFBA. 
-Observatório das Metrópoles<br>
-Telefone: (71) 3283-9055
-</p>
-
-<li><a href="https://www.salvador.ba.gov.br" class="bottom">Clique para ser redirecionado</a></li>
-
-<p class="card3">
-Secretaria Municipal de Promoção Social, Combate à Pobreza, Esportes e Lazer (SEM­PRE – Prefeitura de Salvador)<br>
-Endereço: Rua Miguel Calmon, 28, Comércio, Salvador – BA, CEP 40015-010 <br>
-Telefone: (71) 3202-2300 
-</p>
-
-<p class="card4">
-IONBA – Instituto de Oportunidades da Bahia<br>
-Endereço: Rua Professor Sabino Silva, S/N – Jardim Apipema, Salvador-BA, CEP 40155-250 <br>
-Telefones: (71) 3235-4236 / 3336-2699 | E-mail: ionba@ionba.org.br
-</p>
-
-<p class="card5">
-CAMA – Associação Comunitária e de Moradores de Amaralina<br>
-Endereço: Rua do Uruguai, 26 – Sala 101A, Uruguai, Salvador / BA – 40454-260<br>
-Telefone: (71) 3207-1926 | E-mail: ong.cama@gmail.com
-</p>
-
-<p class="card6">
-CEAS – Centro de Estudos e Ação Social<br>
-Endereço: Rua Prof. Aristídes Novis, 101 – Federação, Salvador-BA, 40210-630<br>
-Telefone: (+55) 71 3247-1232
-</p>
-
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-     <div class="silva">
-  <div class="social-container">
-    <div class="social-icon facebook"><a href="https://wa.link/qc0pcj" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></div>
-    <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
-    <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></div>
+    <div class="contact-card">
+      <p><strong>CEAS – Centro de Estudos e Ação Social</strong><br>
+      Endereço: Rua Prof. Aristídes Novis, 101 – Federação, Salvador – BA, 40210-630<br>
+      Telefone: (71) 3247-1232</p>
+    </div>
   </div>
-  <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
-</div>
+
+  <div class="silva">
+    <div class="social-container">
+      <div class="social-icon facebook"><a href="https://wa.link/qc0pcj" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+      <div class="social-icon instagram"><a href="https://www.instagram.com/lucaxfit" target="_blank"><i class="fab fa-instagram"></i></a></div>
+      <div class="social-icon linkedin"><a href="https://www.linkedin.com/in/lucas-oliveira-308740251" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+    <p class="dr">© Desenvolvido por: Lucas Silva / 2025 | TURMA 59</p>
+  </div>
 
   <script>
     const navbar = document.getElementById("navbar");
     let lastScrollY = window.scrollY || 0;
 
-    // Reseta navbar ao voltar pra página
-    window.addEventListener("pageshow", () => {
-      navbar.classList.remove("hide");
-      lastScrollY = window.scrollY || 0;
-    });
-
-    // Esconde/mostra conforme o scroll
     window.addEventListener("scroll", () => {
-      if (window.scrollY > lastScrollY) {
-        navbar.classList.add("hide"); // scroll down
-      } else {
-        navbar.classList.remove("hide"); // scroll up
-      }
+      if (window.scrollY > lastScrollY) navbar.classList.add("hide");
+      else navbar.classList.remove("hide");
       lastScrollY = window.scrollY;
     });
+
+    function ajustaNavbar() {
+      navbar.style.padding = window.innerWidth < 768 ? "10px 0" : "20px 0";
+    }
+    window.addEventListener("load", ajustaNavbar);
+    window.addEventListener("resize", ajustaNavbar);
   </script>
 </body>
 </html>
